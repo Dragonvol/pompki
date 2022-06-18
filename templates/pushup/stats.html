@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Statystyki{% endblock %}
+
+{% block content %}
+    <h1>TOP 5 POMPKARZY W TYM TYGODNIU</h1>
+    {% for record in top5 %}
+        <h4>
+            {{ record.user }} - Pompki: {{ record.total_count }}
+        </h4>
+    {% endfor %}
+    <h1>TOP 3 NAJWIĘKSZEJ LICZBY SERII W OSTATNICH 30 DNIACH</h1>
+    {% for record in top3 %}
+        <h4>
+            {{ record.user }} - Serie: {{ record.series }}
+        </h4>
+    {% endfor %}
+{% endblock %}

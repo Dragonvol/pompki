@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}
+    Dodaj pompki
+{% endblock %}
+{% block content %}
+    {% if msg %}
+    {{ msg }}
+    {% else %}
+        <h1>Ile pompek dzisiaj zrobiłeś?</h1>
+        <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Dodaj</button>
+    </form>
+    {% endif %}
+{% endblock %}
