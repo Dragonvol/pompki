@@ -12,6 +12,12 @@ class PushUpDay(models.Model):
         MaxValueValidator(10000)
     ])
 
+class Profile(models.Model):
+    user = models.OneToOneField(User,on_delete=models.CASCADE,null=False)
+    name = models.CharField(max_length=30)
+    surname = models.CharField(max_length=30)
+    age = models.IntegerField(null=True)
+
 def top5_this_week():
     class pushup:
         def __init__(self,user):

@@ -5,6 +5,8 @@ from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
 
+
+
 def home_view(request):
     return render(request,'home.html',{})
 
@@ -32,3 +34,4 @@ def stats_view(request):
         'top5':top5,
         'top3':top3
     })
+
